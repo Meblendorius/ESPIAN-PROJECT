@@ -6,7 +6,7 @@ import email
 import imaplib
 import uuid
 
-#=========================================================================
+#Acessos
 
 smtphost='smtp.gmail.com'
 smtpport=587
@@ -53,8 +53,6 @@ class EnvRec():
         server.quit()
 
 
-    #=============================================================================
-
     def recebimento(self):
         print('Acessando Imap')
         mail = imaplib.IMAP4_SSL(imaphost)
@@ -65,10 +63,10 @@ class EnvRec():
             try:
                 print("Tentando Ler")
                 result, data = mail.search(None, 'SUBJECT', '%s' %subject)
-                ids = data[0]  # data is a list.
-                id_list = ids.split()  # ids is a space separated string
+                ids = data[0]
+                id_list = ids.split()
                 result, data = mail.fetch(id_list[0], "(RFC822)")
-                raw_email = data[0][1]  # here's the body, which is raw text of the whole email
+                raw_email = data[0][1]
                 print(result)
                 print(subject)
                 break
