@@ -2,3 +2,14 @@ Colocar marcarção de tempo
 Pesquisr sobre django
 teste do result and data
 Formatação do cabeçalho
+
+cd pythonclub/
+source bin/activate iniciar ambiente virtual
+
+python -m django startproject djespian Criar projeto
+ python manage.py startapp core criar core na pasta do projeto
+
+ Alterar o arquivo settings.py para adicionar a app core em INSTALLED_APPS
+
+
+  python manage.py runserver rodar serviço
